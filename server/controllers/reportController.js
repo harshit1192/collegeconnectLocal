@@ -14,6 +14,7 @@ const createReport = async ({ reporterId, targetType, targetId, reason, descript
     description,
   });
 };
+
 // @desc    Get all reports (admin moderation queue)
 // @route   GET /api/admin/reports
 // @access  Private/Admin
