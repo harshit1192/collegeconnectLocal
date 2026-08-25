@@ -32,6 +32,7 @@ export default function Communities() {
           className="bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium rounded-lg px-4 py-2"
         >
           Create Community
+          
         </Link>
       </div>
 
