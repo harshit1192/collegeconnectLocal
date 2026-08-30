@@ -1,20 +1,21 @@
 import axios from 'axios';
 
-// Centralized axios instance. All future API calls (auth, posts, etc.)
-// should import this instead of creating new axios instances.
+// Centralized axios instance
 const api = axios.create({
-  baseURL: '/api', // proxied to http://localhost:5000/api by vite.config.js in dev
+  baseURL: import.meta.env.VITE_API_URL || '/api',
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
-// Attach JWT token automatically once auth (Phase 3) is implemented.
+// Attach JWT token automatically
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('cc_token');
+
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
+
   return config;
 });
 
